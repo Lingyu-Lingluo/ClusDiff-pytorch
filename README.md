@@ -51,7 +51,7 @@ python generate.py
 python fid.py
 ```
 
-## My Result
+## Our Results
 We generated 100 for each class(the same as the original experiment in the paper).
 
 FID score:20.4476 | CLIP-FID score:6.5952
