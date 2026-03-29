@@ -6,7 +6,7 @@ ClusDiff is a clustering-based training framework for conditional diffusion mode
 * Stage 2: Conditional Injection >     These discovered sub-labels are injected as conditioning signals into the diffusion model. This allows the generative process to be guided by specific sub-group characteristics, leading to the synthesis of highly representative sub-population images.
 
 ## About this repository
-The Stable Diffusion and LoRA implementations in this repo are built upon the [diffusers](https://github.com/huggingface/diffusers) library.
+The Stable Diffusion and LoRA implementations in this repo are built upon the [diffusers](https://github.com/huggingface/diffusers) library.We also use the [clean-fid](https://github.com/GaParmar/clean-fid) repo to compute fid and CLIP-fid. 
 
 ## Dataset
 This repo utilizes the Food-101 dataset as described in the original paper.You can download the dataset manually from the [official website](http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz), or through the `torchvision` downloader pre-integrated into our scripts.
@@ -37,6 +37,6 @@ python fid.py
 ```
 
 ## My Result
-I generated 100 for each class(the same as the original experiment in the paper)
+We generated 100 for each class(the same as the original experiment in the paper)
 
 FID score:20.447627148963363 | CLIP-FID score:6.5952571126739485
