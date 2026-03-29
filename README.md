@@ -11,12 +11,14 @@ The Stable Diffusion and LoRA implementations in this repo are built upon the [d
 ## Dataset
 This repo utilizes the Food-101 dataset as described in the original paper.You can download the dataset manually from the [official website](http://data.vision.ee.ethz.ch/cvl/food-101.tar.gz), or through the `torchvision` downloader pre-integrated into our scripts.
 
-## Running the Experiments
+## Installation
 All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
-```
-git clone https://github.com/Lingyu-Lingluo/ClusDiff-pytorch
+```bash
+git clone [https://github.com/Lingyu-Lingluo/ClusDiff-pytorch.git](https://github.com/Lingyu-Lingluo/ClusDiff-pytorch.git)
 cd ClusDiff-pytorch
-conda env create 
+conda create -n clusdiff python=3.11 -y
+conda activate clusdiff
+pip install -r requirements.txt
 ```
 
 ## Repo Structure
