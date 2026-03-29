@@ -1,31 +1,31 @@
-# 基础模型和 LoRA 权重配置
+# Base model and LoRA weight configuration
 model:
-  pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5" # 之后可以改成 "CompVis/stable-diffusion-v1-4"
-  # 指定之前训练好的 LoRA 权重路径
+  pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5" # Can be changed to "CompVis/stable-diffusion-v1-4" later
+  # Specify the paths to the previously trained LoRA weights
   unet_lora_path: "./output/unet_lora/adapter_model.safetensors"
   text_encoder_lora_path: "./output/text_encoder_lora/adapter_model.safetensors"
 
-# 数据与采样分布配置
+# Data and sampling distribution configuration
 data:
   metadata_path: "./data/food-101/images/metadata.jsonl"
   
-# 生成配置
+# Generation configuration
 generate:
-  # 每一种食物（大类，比如 steak）生成的图片数量 N
+  # Number of images N to generate for each food (major class, e.g., steak)
   num_images_per_class: 100
   
-  # 子类 label 的选择方法:
-  # "uniform": 平均概率随机 (方法1：各个子类被选中的概率相同)
-  # "inverse_density": 概率密度填补 (方法2：原数量越少的子类，被选中的概率越高)
-  # "proportional": 按聚类占比 (方法3：按照原数据集中各个子类的真实数量比例进行采样)
+  # Subclass label selection method:
+  # "uniform": Uniform random probability (Method 1: equal probability of selecting each subclass)
+  # "inverse_density": Inverse density filling (Method 2: subclasses with fewer original samples have a higher probability of being selected)
+  # "proportional": Proportional to clustering (Method 3: sampling based on the true quantity ratio of each subclass in the original dataset)
   label_selection_method: "proportional" 
   
-  # 采样参数
+  # Sampling parameters
   num_inference_steps: 50
   guidance_scale: 7.5
-  batch_size: 4 # 推理时的 batch size，为了加快生成速度
+  batch_size: 4 
   seed: 40
 
-# 输出配置
+# Output configuration
 output:
   output_dir: "./generated_images"
