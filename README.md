@@ -15,6 +15,7 @@ This repo utilizes the Food-101 dataset as described in the original paper.You c
 All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
 
 ## Repo Structure
+```text
 clustering_food/
 ├── config/
 │   ├── fine_tune.yaml      # Config for stable diffusion training
