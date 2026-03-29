@@ -7,3 +7,6 @@ ClusDiff is a clustering-based training framework for conditional diffusion mode
 
 ## About this repository
 The Stable Diffusion and LoRA implementations in this repository are built upon the [diffusers](https://github.com/huggingface/diffusers) library.
+
+## Running the Experiments
+All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
