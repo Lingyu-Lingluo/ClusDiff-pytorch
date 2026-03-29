@@ -14,3 +14,14 @@ This repo utilizes the Food-101 dataset as described in the original paper.You c
 ## Running the Experiments
 All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
 
+## Repo Structure
+clustering_food/
+├── config/
+│   ├── fine_tune.yaml      # Config for stable diffusion training
+│   └── generate.yaml       # Config for image generation
+├── data/
+│   └── food-101.tar.gz     
+├── clustering.py           # Stage 1: Affinity Propagation clustering
+├── train_lora.py           # Stage 2: Training script for LoRA-based diffusion
+├── generate.py             # Stage 2*: Inference and image generation
+└── fid.py                  # Evaluation script for FID score       
