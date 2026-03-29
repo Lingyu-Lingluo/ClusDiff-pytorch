@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
 
-## Repo Structure
+### Repo Structure
 ```text
 clustering_food/
 ├── config/
@@ -38,7 +38,7 @@ clustering_food/
 └── fid.py                  # Evaluation script for FID score       
 ```
 
-## Run the repo
+### Run the repo
 ```
 python clustering.py
 accelerate launch --num_processes=2 train_lora.py
