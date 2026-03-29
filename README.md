@@ -27,6 +27,7 @@ clustering_food/
 ├── generate.py             # Stage 2*: Inference and image generation
 └── fid.py                  # Evaluation script for FID score       
 ```
+
 ## Run the repo
 ```
 python clustering.py
@@ -34,3 +35,7 @@ accelerate launch --num_processes=2 train_lora.py
 python generate.py
 python fid.py
 ```
+
+## My Result
+I generated 100 for each class(the same as the original experiment in the paper)
+FID score:20.447627148963363 | CLIP-FID score:6.5952571126739485
