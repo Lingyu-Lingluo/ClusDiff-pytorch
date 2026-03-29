@@ -26,3 +26,11 @@ clustering_food/
 ├── train_lora.py           # Stage 2: Training script for LoRA-based diffusion
 ├── generate.py             # Stage 2*: Inference and image generation
 └── fid.py                  # Evaluation script for FID score       
+```
+## Run the repo
+```
+python clustering.py
+accelerate launch --num_processes=2 train_lora.py
+python generate.py
+python fid.py
+```
