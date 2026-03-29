@@ -15,7 +15,7 @@ This repo utilizes the Food-101 dataset as described in the original paper.You c
 ### Clone the repository
 
 ```bash
-git clone [https://github.com/Lingyu-Lingluo/ClusDiff-pytorch.git](https://github.com/Lingyu-Lingluo/ClusDiff-pytorch.git)
+git clone https://github.com/Lingyu-Lingluo/ClusDiff-pytorch.git
 cd ClusDiff-pytorch
 conda create -n clusdiff python=3.11 -y
 conda activate clusdiff
