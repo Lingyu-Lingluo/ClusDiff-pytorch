@@ -1,0 +1,49 @@
+# 基础模型配置
+model:
+  pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
+
+# 数据集配置
+data:
+  # 由于你之前的要求中提到数据集路径是 ./data/processed
+  # 请确保把上一步处理好的图片和 metadata.jsonl 放在这里
+  dataset_dir: "./data/food-101/images"
+  resolution: 512
+  center_crop: true
+  random_flip: true
+
+# 训练超参数
+train:
+  batch_size: 16
+  learning_rate: 4.0e-5
+  num_train_epochs: 100
+  # 梯度累加步数，用于等效增大 batch_size
+  gradient_accumulation_steps: 1
+  # 混合精度: "no", "fp16", "bf16"
+  mixed_precision: "fp16"
+  seed: 42
+  # 每多少步记录一次日志
+  logging_steps: 10
+
+# LoRA 配置
+lora:
+  rank: 8
+  alpha: 8
+
+# Wandb 日志和采样追踪配置
+logging:
+  wandb:
+    project: "food-diffusion-lora"
+    entity: null # 替换为你的 wandb 用户名或团队名，或者保持 null 使用默认
+    name: "food101-clustering-run1"
+  # 采样配置
+  sampling:
+    # 采样间隔 epoch 数 (例如每 10 个 epoch 采样一次)
+    sample_every_n_epochs: 10
+    # 测试提示词，包含我们之前重写的聚类标签，例如 "a photo of apple_pie_0"
+    prompt: "a photo of apple_pie_0"
+    num_inference_steps: 50
+    num_images: 4
+
+# 输出配置
+output:
+  output_dir: "./output"
