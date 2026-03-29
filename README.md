@@ -22,7 +22,8 @@ conda activate clusdiff
 pip install -r requirements.txt
 ```
 
-All experiments are configured using YAML files located in the configs/ directory. These files manage both hyperparameters and file paths.By default, file paths are set as relative paths.If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
+[!NOTE]
+All experiments are configured using YAML files located in the config/ directory. These files manage both hyperparameters and file paths. By default, file paths are set as relative paths. If you need to modify the directory settings, please update the path in the corresponding YAML file to the absolute path of this repository on your local machine.
 
 ### Repo Structure
 ```text
